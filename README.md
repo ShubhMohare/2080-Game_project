@@ -1,37 +1,131 @@
-# Getting Started with 2048
+# 🚀 2048 Game – DevSecOps CI/CD Deployment Project
 
-This game (2048) was built using **React** and **TypeScript**. The unique part of this example is animations. The animations in React aren't that straightforward, so I hope you can learn something new from it.
+This project demonstrates a complete **DevSecOps CI/CD pipeline** by deploying the classic 2048 Game (built using React and TypeScript) to AWS EKS using modern DevOps tools and security best practices.
 
-**Wondering how was that built?** You can find a video tutorial on [my YouTube Channel](https://www.youtube.com/channel/UCJV16_5c4A0amyBZSI4yP6A)
+Instead of only building the game, this project focuses on:
 
-## How To Play?
+- Containerization
+- Automated CI/CD
+- Security Scanning
+- Cloud Deployment
+- Infrastructure as Code
 
-You can play 2048 on [Github pages](https://mateuszsokola.github.io/2048-in-react/)
+---
 
-## Available Scripts
+## 🛠 Tech Stack
 
-In the project directory, you can run:
+### 👨‍💻 Application
+- React
+- TypeScript
+- Yarn / npm
 
-### `yarn start`
+### ⚙️ DevOps & Cloud Tools
+- Jenkins
+- SonarQube
+- Trivy
+- Docker
+- AWS ECR
+- AWS EKS
+- Terraform
+- Kubernetes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🔁 CI/CD Pipeline Flow
 
-### `yarn build`
+GitHub → Jenkins → SonarQube → Trivy → Docker Build → Push to ECR → Deploy to EKS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📌 Pipeline Stages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Source Code Checkout  
+2. Install Dependencies  
+3. SonarQube Code Analysis  
+4. Quality Gate Validation  
+5. Trivy File System Scan  
+6. Docker Image Build  
+7. Trivy Image Scan  
+8. Push Docker Image to AWS ECR  
+9. Deploy Application to AWS EKS  
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ☁️ Infrastructure Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- EKS cluster provisioned using Terraform
+- Kubernetes Deployment & Service YAML files
+- IAM Roles configured for Jenkins & EKS
+- Secure container registry using AWS ECR
+
+---
+
+## 🧪 Run Application Locally
+
+Inside the project directory:
+
+```bash
+npm install
+npm start
+```
+
+Open in browser:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🐳 Build Docker Image Manually
+
+```bash
+docker build -t 2048-game .
+docker run -p 3000:3000 2048-game
+```
+
+---
+
+## ☸ Deploy to Kubernetes
+
+```bash
+kubectl apply -f deployment.yaml
+kubectl get pods
+kubectl get svc
+```
+
+---
+
+## 🔐 Security Implementation
+
+- Static Code Analysis using SonarQube  
+- File System Vulnerability Scanning using Trivy  
+- Docker Image Vulnerability Scanning  
+- Quality Gate Enforcement in CI/CD  
+
+---
+
+## 🎯 Project Objective
+
+This project demonstrates how a frontend application can be:
+
+- Containerized using Docker  
+- Integrated into Jenkins CI/CD pipeline  
+- Secured using DevSecOps practices  
+- Deployed to AWS EKS using Infrastructure as Code  
+
+---
+
+## 📈 Future Improvements
+
+- Add Helm Charts
+- Add Monitoring (Prometheus & Grafana)
+- Implement GitHub Webhooks
+- Implement GitOps using ArgoCD
+
+---
+
+## 👨‍💻 Author
+
+Shubham Mohare  
+DevOps & Cloud Enthusiast
